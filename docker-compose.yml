@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: brenda_nutri_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: brenda
+      POSTGRES_PASSWORD: brenda123
+      POSTGRES_DB: brenda_nutri
+    ports:
+      - "5432:5432"
+    volumes:
+      - brenda_nutri_data:/var/lib/postgresql/data
+
+volumes:
+  brenda_nutri_data:
