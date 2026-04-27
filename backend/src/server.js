@@ -20,3 +20,9 @@ async function start() {
 }
 
 start().catch(error => console.error("Erro ao iniciar backend:", error));
+
+app.get("/seed", async (req, res) => {
+  const seed = require("./seed");
+  await seed();
+  res.send("Seed executado!");
+});
